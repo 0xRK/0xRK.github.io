@@ -1,0 +1,75 @@
+.text-editor-app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.text-editor-app__toolbar {
+  display: flex;
+  gap: 2px;
+  padding: 4px 8px;
+  background: #373737;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.text-editor-app__toolbar-btn {
+  padding: 4px 12px;
+  font-size: 13px;
+  font-family: var(--font-ui);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.text-editor-app__toolbar-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.text-editor-app__body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.text-editor-app__gutter {
+  width: 44px;
+  padding: 8px 0;
+  background: #252525;
+  text-align: right;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.text-editor-app__line-num {
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.text-editor-app__textarea {
+  flex: 1;
+  background: var(--window-bg);
+  color: var(--text-primary);
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+.text-editor-app__status {
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: #252525;
+  font-family: var(--font-ui);
+  flex-shrink: 0;
+}

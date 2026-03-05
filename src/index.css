@@ -1,11 +1,23 @@
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --panel-bg: rgba(30, 30, 30, 0.85);
+  --dock-bg: rgba(30, 30, 30, 0.7);
+  --window-bg: #2d2d2d;
+  --window-header: #373737;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --accent: #e95420;
+  --accent-hover: #c7431a;
+  --btn-close: #ff5f57;
+  --btn-minimize: #ffbd2e;
+  --btn-maximize: #28c940;
+  --border-radius: 8px;
+  --font-mono: 'Ubuntu Mono', 'Fira Code', 'Consolas', monospace;
+  --font-ui: 'Ubuntu', 'Inter', system-ui, -apple-system, sans-serif;
+
+  font-family: var(--font-ui);
   line-height: 1.5;
   font-weight: 400;
-
-  color: #f5f0eb;
-  background: linear-gradient(180deg, #3d2b1f 0%, #5c4033 50%, #6b4a36 100%);
-  min-height: 100vh;
+  color: var(--text-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,11 +31,12 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 #root {
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 a {
@@ -32,5 +45,22 @@ a {
 }
 
 ::selection {
-  background-color: rgba(212, 201, 188, 0.3);
+  background-color: rgba(233, 84, 32, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
 }

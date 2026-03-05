@@ -1,0 +1,61 @@
+.contact-app {
+  padding: 28px;
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+}
+
+.contact-app__title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.contact-app__subtitle {
+  margin: 0 0 28px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.contact-app__links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-app__link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: border-color 0.15s, background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-app__link-card:hover {
+  border-color: rgba(233, 84, 32, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-app__link-icon {
+  color: var(--accent);
+  display: flex;
+}
+
+.contact-app__link-card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-app__link-card strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.contact-app__link-card span {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
