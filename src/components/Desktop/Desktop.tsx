@@ -15,9 +15,9 @@ interface DesktopIcon {
 
 const initialIcons: DesktopIcon[] = [
   { appId: 'about-me',     label: 'About Me',      icon: '👤', top: '42.5%', left: '3.5%' },
-  { appId: 'projects',     label: 'Projects',       icon: '📁', top: '39.9%', left: '10.5%' },
+  { appId: 'projects',     label: 'Projects',       icon: '📦', top: '39.9%', left: '10.5%' },
   { appId: 'contact',      label: 'Contact',        icon: '✉️', top: '37.5%', left: '17.4%' },
-  { appId: 'terminal',     label: 'Terminal',        icon: '💻', top: '29.8%', left: '33.3%' },
+  { appId: 'terminal',     label: 'Terminal',        icon: '>_', top: '29.8%', left: '33.3%' },
   { appId: 'text-editor',  label: 'Text Editor',    icon: '📝', top: '26.2%', left: '39.7%' },
   { appId: 'music-player', label: 'Music Player',   icon: '🎵', top: '23.8%', left: '45.5%' },
   { appId: 'file-manager', label: 'Files',           icon: '🗂️', top: '20.9%', left: '51.4%' },
@@ -39,7 +39,11 @@ const initialIcons: DesktopIcon[] = [
 //   {                         label: 'lamp.jpg', icon: '💡', top: '53.7%', left: '70.9%' },
 //   {                         label: 'Recycle Bin', icon: '🗑️', top: '72.4%', left: '75.1%' },
 // ]
-export function Desktop() {
+interface DesktopProps {
+  onSignOut: () => void;
+}
+
+export function Desktop({ onSignOut }: DesktopProps) {
   const { state, dispatch } = useDesktop();
   const [icons, setIcons] = useState(initialIcons);
   const dragRef = useRef<{ index: number; offsetX: number; offsetY: number; moved: boolean } | null>(null);
@@ -92,7 +96,7 @@ export function Desktop() {
 
   return (
     <div className="desktop">
-      <TopPanel />
+      <TopPanel onSignOut={onSignOut} />
       <Dock />
       <div className="desktop__icons">
         {icons.map(({ appId, label, icon, top, left }, index) => (

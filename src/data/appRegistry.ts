@@ -20,7 +20,7 @@ export const appRegistry: Record<string, AppDefinition> = {
   'projects': {
     id: 'projects',
     title: 'Projects',
-    icon: '📁',
+    icon: '📦',
     defaultWidth: 800,
     defaultHeight: 550,
     component: Projects,
@@ -38,7 +38,7 @@ export const appRegistry: Record<string, AppDefinition> = {
   'terminal': {
     id: 'terminal',
     title: 'Terminal',
-    icon: '💻',
+    icon: '>_',
     defaultWidth: 650,
     defaultHeight: 420,
     component: Terminal,

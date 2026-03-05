@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import './TopPanel.css';
 
-export function TopPanel() {
+interface TopPanelProps {
+  onSignOut: () => void;
+}
+
+export function TopPanel({ onSignOut }: TopPanelProps) {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -21,9 +25,7 @@ export function TopPanel() {
 
   return (
     <div className="top-panel">
-      <div className="top-panel__left">
-        <span className="top-panel__activities">Activities</span>
-      </div>
+      <div className="top-panel__left" />
       <div className="top-panel__center">
         <span>{formatted} {clock}</span>
       </div>
@@ -31,7 +33,13 @@ export function TopPanel() {
         <span className="top-panel__tray-icon" title="Volume">🔊</span>
         <span className="top-panel__tray-icon" title="Network">📶</span>
         <span className="top-panel__tray-icon" title="Battery">🔋</span>
-        <span className="top-panel__tray-icon" title="Power">⏻</span>
+        <span
+          className="top-panel__tray-icon top-panel__signout"
+          title="Sign Out"
+          onClick={onSignOut}
+        >
+          ⏻
+        </span>
       </div>
     </div>
   );
