@@ -26,7 +26,7 @@
   user-select: none;
   width: 80px;
   pointer-events: auto;
-  transform: translateY(-100%);
+  transform: translate(-50%, -100%);
 }
 
 .desktop__icon:hover {
@@ -40,6 +40,14 @@
 .desktop__icon-emoji {
   font-size: 40px;
   line-height: 1;
+}
+
+.desktop__icon--draggable {
+  cursor: grab;
+}
+
+.desktop__icon--draggable:active {
+  cursor: grabbing;
 }
 
 .desktop__icon-label {
