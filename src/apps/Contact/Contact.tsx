@@ -5,7 +5,7 @@ export function Contact() {
     <div className="contact-app">
       <h2 className="contact-app__title">Get in Touch</h2>
       <p className="contact-app__subtitle">
-        Feel free to reach out through any of these channels.
+        Feel free to reach out through any of these channels!
       </p>
 
       <div className="contact-app__links">
@@ -42,6 +42,25 @@ export function Contact() {
             <span>linkedin.com/in/rkrishna2</span>
           </div>
         </a>
+
+        <a
+          href="mailto:rishi1.krishna1@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-app__link-card"
+        >
+          <span className="contact-app__link-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </span>
+          <div>
+            <strong>Email</strong>
+            <span>rishi1.krishna1@gmail.com</span>
+          </div>
+        </a>
+
+
       </div>
     </div>
   );
