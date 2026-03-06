@@ -6,6 +6,7 @@ import { Terminal } from '../apps/Terminal/Terminal';
 import { TextEditor } from '../apps/TextEditor/TextEditor';
 import { MusicPlayer } from '../apps/MusicPlayer/MusicPlayer';
 import { FileManager } from '../apps/FileManager/FileManager';
+import { Resume } from '../apps/Resume/Resume';
 
 export const appRegistry: Record<string, AppDefinition> = {
   'about-me': {
@@ -29,7 +30,7 @@ export const appRegistry: Record<string, AppDefinition> = {
   'contact': {
     id: 'contact',
     title: 'Contact',
-    icon: '✉️',
+    icon: '🪪',
     defaultWidth: 500,
     defaultHeight: 400,
     component: Contact,
@@ -69,6 +70,15 @@ export const appRegistry: Record<string, AppDefinition> = {
     defaultWidth: 750,
     defaultHeight: 500,
     component: FileManager,
+    showInDock: true,
+  },
+  'resume': {
+    id: 'resume',
+    title: 'Resume',
+    icon: '📄',
+    defaultWidth: 800,
+    defaultHeight: 600,
+    component: Resume,
     showInDock: true,
   },
 };
