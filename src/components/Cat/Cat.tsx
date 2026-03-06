@@ -165,7 +165,9 @@ export function Cat() {
         title={catState !== 'sleeping' ? 'Click to call Gloobert home' : "Gloobert's bed"}
       >
         <span className="cat-bed__emoji">🛏️</span>
-        <span className="cat-bed__label">Cat Bed</span>
+        <span className="cat-bed__label">
+          {catState !== 'sleeping' ? 'Put him to sleep' : 'Wake him up!'}
+        </span>
       </div>
 
       {/* Cat */}
@@ -180,8 +182,9 @@ export function Cat() {
           <span key={id} className="cat__heart" style={{ '--heart-angle': `${angle}deg` } as React.CSSProperties}>❤️</span>
         ))}
         <span ref={emojiRef} className="cat__emoji">
-          {catState === 'sleeping' ? '😺' : catState === 'petted' ? '😻' : '🐈\u200d⬛'}
+          {catState === 'sleeping' ? '😼' : catState === 'petted' ? '😻' : '🐈\u200d⬛'}
         </span>
+        {catState === 'sleeping' && <span className="cat__zzz">💤</span>}
       </div>
     </>
   );

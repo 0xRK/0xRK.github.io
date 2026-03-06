@@ -87,6 +87,8 @@ export function Desktop({ onSignOut }: DesktopProps) {
     <div className="desktop">
       <TopPanel onSignOut={onSignOut} />
       <Dock />
+      <div className="desktop__sign desktop__sign--left">important</div>
+      <div className="desktop__sign desktop__sign--right">misc.</div>
       <div className="desktop__icons">
         {icons.map(({ appId, label, icon, top, left }, index) => (
           <button
