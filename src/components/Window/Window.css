@@ -48,9 +48,24 @@
   padding: 0;
   transition: opacity 0.15s;
   opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.window__btn::after {
+  content: '';
+  display: block;
+  opacity: 0;
+  transition: opacity 0.15s;
 }
 
 .window__btn:hover {
+  opacity: 1;
+}
+
+.window__btn:hover::after {
   opacity: 1;
 }
 
@@ -58,12 +73,36 @@
   background: var(--btn-close);
 }
 
+.window__btn--close::after {
+  width: 8px;
+  height: 8px;
+  /* X icon via two thin rotated bars */
+  background:
+    linear-gradient(45deg, transparent 42%, rgba(0,0,0,0.7) 42%, rgba(0,0,0,0.7) 58%, transparent 58%),
+    linear-gradient(-45deg, transparent 42%, rgba(0,0,0,0.7) 42%, rgba(0,0,0,0.7) 58%, transparent 58%);
+}
+
 .window__btn--minimize {
   background: var(--btn-minimize);
 }
 
+.window__btn--minimize::after {
+  width: 8px;
+  height: 1.5px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1px;
+}
+
 .window__btn--maximize {
   background: var(--btn-maximize);
+}
+
+.window__btn--maximize::after {
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid rgba(0, 0, 0, 0.7);
+  border-radius: 1px;
+  box-sizing: border-box;
 }
 
 .window__title {

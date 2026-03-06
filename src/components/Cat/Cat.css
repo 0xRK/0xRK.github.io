@@ -1,0 +1,90 @@
+.cat {
+  position: fixed;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 9999;
+  user-select: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.cat__emoji {
+  font-size: 32px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.cat__emoji--right {
+  transform: scaleX(-1);
+}
+
+.cat__label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.cat--sitting {
+  animation: cat-idle 2s ease-in-out infinite;
+}
+
+.cat--walking,
+.cat--going-home {
+  animation: cat-walk 0.35s steps(2) infinite;
+}
+
+.cat--sleeping {
+  animation: cat-idle 2s ease-in-out infinite;
+}
+
+@keyframes cat-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes cat-walk {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Cat bed */
+.cat-bed {
+  position: fixed;
+  z-index: 9998;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.15s;
+}
+
+.cat-bed:hover {
+  transform: scale(1.1);
+}
+
+.cat-bed__emoji {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cat-bed__label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}

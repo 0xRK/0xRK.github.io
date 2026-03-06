@@ -3,6 +3,7 @@ import { useDesktop } from '../../context/DesktopContext';
 import { TopPanel } from '../TopPanel/TopPanel';
 import { Dock } from '../Dock/Dock';
 import { Window } from '../Window/Window';
+import { Cat } from '../Cat/Cat';
 import './Desktop.css';
 
 interface DesktopIcon {
@@ -14,37 +15,18 @@ interface DesktopIcon {
 }
 
 const initialIcons: DesktopIcon[] = [
-  // Left bookshelf — top shelf (2 icons)
-  { appId: 'about-me',     label: 'About Me',      icon: '👤', top: '37.5%', left: '5%' },
-  { appId: 'projects',     label: 'Projects',       icon: '📦', top: '37.5%', left: '15%' },
-  // Left bookshelf — bottom shelf (2 icons)
-  { appId: 'contact',      label: 'My Links',        icon: '🪪', top: '44%', left: '5%' },
-  { appId: 'resume',        label: 'Resume',          icon: '📜', top: '44%', left: '15%' },
-  // Right bookshelf — top shelf (2 icons)
-  { appId: 'terminal',     label: 'Terminal',        icon: '>_', top: '24%', left: '33%' },
-  { appId: 'text-editor',  label: 'Text Editor',    icon: '📝', top: '24%', left: '43%' },
-  // Right bookshelf — bottom shelf (2 icons)
-  { appId: 'music-player', label: 'Music Player',   icon: '🎵', top: '30.5%', left: '33%' },
-  { appId: 'file-manager', label: 'Files',           icon: '🗂️', top: '30.5%', left: '43%' },
-  // Desk area
+  { appId: 'about-me',     label: 'About Me',      icon: '👤', top: '42.5%', left: '3.5%' },
+  { appId: 'projects',     label: 'Projects',       icon: '📦', top: '39.9%', left: '10.5%' },
+  { appId: 'contact',      label: 'My Links',        icon: '🪪', top: '37.5%', left: '17.4%' },
+  { appId: 'terminal',     label: 'Terminal',        icon: '>_', top: '29.8%', left: '33.3%' },
+  { appId: 'text-editor',  label: 'Text Editor',    icon: '📝', top: '26.2%', left: '39.7%' },
+  { appId: 'music-player', label: 'Music Player',   icon: '🎵', top: '23.8%', left: '45.5%' },
+  { appId: 'file-manager', label: 'Files',           icon: '🗂️', top: '20.9%', left: '51.4%' },
+  { appId: 'resume',        label: 'Resume',          icon: '📜', top: '35.5%', left: '23%' },
   { appId: 'about-me',     label: "Rishi's PC",     icon: '🖥️', top: '62.2%', left: '70.6%' },
   {                         label: 'lamp.jpg',        icon: '💡', top: '53.7%', left: '71.9%' },
   {                         label: 'Recycle Bin',     icon: '🗑️', top: '72.4%', left: '75.1%' },
 ];
-
-// const initialIcons: DesktopIcon[] = [
-//   { appId: 'about-me',     label: 'About Me',      icon: '👤', top: '42.5%', left: '3.5%' },
-//   { appId: 'projects',     label: 'Projects',       icon: '📦', top: '39.9%', left: '10.5%' },
-//   { appId: 'contact',      label: 'My Links',        icon: '🪪', top: '37.5%', left: '17.4%' },
-//   { appId: 'terminal',     label: 'Terminal',        icon: '>_', top: '29.8%', left: '33.3%' },
-//   { appId: 'text-editor',  label: 'Text Editor',    icon: '📝', top: '26.2%', left: '39.7%' },
-//   { appId: 'music-player', label: 'Music Player',   icon: '🎵', top: '23.8%', left: '45.5%' },
-//   { appId: 'file-manager', label: 'Files',           icon: '🗂️', top: '20.9%', left: '51.4%' },
-//   { appId: 'resume',        label: 'Resume',          icon: '📄', top: '35.5%', left: '23%' },
-//   { appId: 'about-me',     label: "Rishi's PC",     icon: '🖥️', top: '62.2%', left: '70.6%' },
-//   {                         label: 'lamp.jpg',        icon: '💡', top: '53.7%', left: '71.9%' },
-//   {                         label: 'Recycle Bin',     icon: '🗑️', top: '72.4%', left: '75.1%' },
-// ];
 
 interface DesktopProps {
   onSignOut: () => void;
@@ -126,6 +108,7 @@ export function Desktop({ onSignOut }: DesktopProps) {
             <Window key={w.id} windowState={w} />
           ))}
       </div>
+      <Cat />
     </div>
   );
 }
