@@ -43,7 +43,7 @@
 }
 
 .desktop__icon-emoji--terminal {
-  font-size: 18px;
+  font-size: 30px;
   font-family: var(--font-mono);
   font-weight: 700;
   background: #2d2d2d;

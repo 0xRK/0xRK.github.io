@@ -32,6 +32,20 @@
   white-space: nowrap;
 }
 
+.cat__heart {
+  position: absolute;
+  top: -20px;
+  font-size: 18px;
+  animation: cat-heart 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes cat-heart {
+  0% { opacity: 1; transform: rotate(var(--heart-angle, 0deg)) translateY(0) scale(0.5); }
+  50% { opacity: 1; transform: rotate(var(--heart-angle, 0deg)) translateY(-15px) scale(1); }
+  100% { opacity: 0; transform: rotate(var(--heart-angle, 0deg)) translateY(-30px) scale(1.2); }
+}
+
 .cat--sitting {
   animation: cat-idle 2s ease-in-out infinite;
 }

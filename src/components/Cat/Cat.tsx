@@ -14,7 +14,7 @@ const START_DIST = 80;
 // Minimum horizontal distance before changing facing direction
 const FACE_THRESHOLD = 15;
 
-type CatState = 'sleeping' | 'walking' | 'idle' | 'going-home';
+type CatState = 'sleeping' | 'walking' | 'idle' | 'going-home' | 'petted';
 
 export function Cat() {
   const [catState, setCatState] = useState<CatState>('sleeping');
@@ -25,6 +25,8 @@ export function Cat() {
   const rafRef = useRef<number>(0);
   const facingRef = useRef<'left' | 'right'>('left');
   const isMovingRef = useRef(false);
+  const [hearts, setHearts] = useState<{ id: number; angle: number }[]>([]);
+  const [petCount, setPetCount] = useState(0);
 
   const bedPos = useCallback(() => ({
     x: (BED_X / 100) * window.innerWidth,
@@ -45,9 +47,16 @@ export function Cat() {
     targetRef.current = { x: e.clientX, y: e.clientY };
   }, []);
 
+  // Petting timer — return to idle after a moment, resets on each pet
+  useEffect(() => {
+    if (petCount === 0) return;
+    const timer = setTimeout(() => setCatState('idle'), 1500);
+    return () => clearTimeout(timer);
+  }, [petCount]);
+
   // Following animation loop
   useEffect(() => {
-    if (catState === 'sleeping') return;
+    if (catState === 'sleeping' || catState === 'petted') return;
 
     const goingHome = catState === 'going-home';
 
@@ -117,12 +126,20 @@ export function Cat() {
     };
   }, [catState, onMouseMove]);
 
-  // Click cat to wake it up
+  // Click cat to wake or pet it
   const handleCatClick = () => {
     if (catState === 'sleeping') {
       targetRef.current = { ...posRef.current };
       isMovingRef.current = false;
       setCatState('idle');
+    } else if (catState !== 'going-home') {
+      isMovingRef.current = false;
+      const id = Date.now();
+      const angle = Math.random() * 360; // any direction
+      setHearts((prev) => [...prev, { id, angle }]);
+      setTimeout(() => setHearts((prev) => prev.filter((h) => h.id !== id)), 1500);
+      setCatState('petted');
+      setPetCount((c) => c + 1);
     }
   };
 
@@ -159,8 +176,11 @@ export function Cat() {
         title={catState === 'sleeping' ? 'Click to wake Gloobert!' : 'Gloobert'}
       >
         <span className="cat__label">Gloobert</span>
+        {hearts.map(({ id, angle }) => (
+          <span key={id} className="cat__heart" style={{ '--heart-angle': `${angle}deg` } as React.CSSProperties}>❤️</span>
+        ))}
         <span ref={emojiRef} className="cat__emoji">
-          {catState === 'sleeping' ? '😺' : '🐈\u200d⬛'}
+          {catState === 'sleeping' ? '😺' : catState === 'petted' ? '😻' : '🐈\u200d⬛'}
         </span>
       </div>
     </>
