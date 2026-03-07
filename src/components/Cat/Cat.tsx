@@ -166,7 +166,7 @@ export function Cat() {
       >
         <span className="cat-bed__emoji">🛏️</span>
         <span className="cat-bed__label">
-          {catState !== 'sleeping' ? 'Put him to sleep' : 'Wake him up!'}
+          {catState !== 'sleeping' ? 'Go to sleep!' : 'Wake him up!'}
         </span>
       </div>
 

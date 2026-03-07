@@ -25,7 +25,7 @@ const initialIcons: DesktopIcon[] = [
   { appId: 'resume',        label: 'Resume',          icon: '📜', top: '35.5%', left: '23%' },
   { appId: 'about-me',     label: "Rishi's PC",     icon: '🖥️', top: '62.2%', left: '70.6%' },
   {                         label: 'lamp.jpg',        icon: '💡', top: '53.7%', left: '71.9%' },
-  {                         label: 'Recycle Bin',     icon: '🗑️', top: '72.4%', left: '75.1%' },
+  {                         label: 'Recycle Bin',     icon: '🗑️', top: '75.4%', left: '75.1%' },
 ];
 
 interface DesktopProps {
