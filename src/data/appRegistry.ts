@@ -7,6 +7,7 @@ import { TextEditor } from '../apps/TextEditor/TextEditor';
 import { MusicPlayer } from '../apps/MusicPlayer/MusicPlayer';
 import { FileManager } from '../apps/FileManager/FileManager';
 import { Resume } from '../apps/Resume/Resume';
+import { Curia } from '../apps/Curia/Curia';
 
 export const appRegistry: Record<string, AppDefinition> = {
   'about-me': {
@@ -79,6 +80,15 @@ export const appRegistry: Record<string, AppDefinition> = {
     defaultWidth: 800,
     defaultHeight: 600,
     component: Resume,
+    showInDock: true,
+  },
+  'curia': {
+    id: 'curia',
+    title: 'Curia',
+    icon: '📅',
+    defaultWidth: 1100,
+    defaultHeight: 700,
+    component: Curia,
     showInDock: true,
   },
 };

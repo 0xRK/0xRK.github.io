@@ -3,7 +3,12 @@
     "allow": [
       "Bash(npx tsc:*)",
       "Bash(npm run:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(head -c 2000 \"C:\\\\projects\\\\michaeldejournett.github.io\\\\public\\\\curia\\\\events.json\")",
+      "Bash(cp \"C:/projects/michaeldejournett.github.io/public/curia/events.json\" \"C:/projects/0xRK.github.io/public/curia/events.json\")",
+      "Bash(cp \"C:/projects/michaeldejournett.github.io/public/curia/logo.png\" \"C:/projects/0xRK.github.io/public/curia/logo.png\")",
+      "Bash(npx vite build)",
+      "Bash(node -e \"const d = require\\(''./public/curia/events.json''\\); console.log\\(''keys:'', Object.keys\\(d\\).slice\\(0,5\\)\\); console.log\\(''has events:'', Array.isArray\\(d.events\\)\\); if\\(Array.isArray\\(d.events\\)\\) console.log\\(''count:'', d.events.length, ''first:'', JSON.stringify\\(d.events[0]\\).slice\\(0,200\\)\\); else if\\(Array.isArray\\(d\\)\\) console.log\\(''is array, count:'', d.length, ''first:'', JSON.stringify\\(d[0]\\).slice\\(0,200\\)\\);\")"
     ]
   }
 }
